@@ -1,0 +1,9 @@
+consulMaster:
+    image: progrium/consul
+    command: -server -advertise 10.0.1.1 -bootstrap-expect 3
+consulSlave1:
+    image: progrium/consul
+    command: -server -advertise 10.0.1.2 -join 10.0.1.1
+consulSlave2:
+    image: progrium/consul
+    command: -server -advertise 10.0.1.3 -join 10.0.1.1

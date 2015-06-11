@@ -1,0 +1,17 @@
+{
+    "newStorageAccountName": {
+        "value": "gabhartswarmstorage"
+    },
+    "adminUsername": {
+        "value": "gabhart"
+    },
+    "adminPassword": {
+        "value": "%ComplexPassword%123"
+    },
+    "dnsNameForPublicIP": {
+        "value": "gabhart-linux-vm-test"
+    },
+    "ubuntuOSVersion": {
+        "value": "14.04.2-LTS"
+    }
+}
