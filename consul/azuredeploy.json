@@ -298,11 +298,6 @@
 							"restart": "always",
 							"command": "[concat('-server -advertise ', reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress, ' -bootstrap-expect 3')]",
 							"ports": ["8300:8300", "8301:8301", "8301:8301/udp", "8302:8302", "8302:8302/udp", "8400:8400", "8500:8500", "53:53/udp"]
-						},
-						"swarm": {
-							"image": "swarm",
-							"restart": "always",
-							"command": "[concat('join --addr=', reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress, ':2375 consul://', reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress, ':8500/swarm')]"
 						}
 					}
 				}
@@ -334,11 +329,6 @@
 							"restart": "always",
 							"command": "[concat('-server -advertise ', reference(concat(variables('nicName'), copyIndex())).ipConfigurations[0].properties.privateIPAddress, ' -join ', reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress)]",
 							"ports": ["8300:8300", "8301:8301", "8301:8301/udp", "8302:8302", "8302:8302/udp", "8400:8400", "8500:8500", "53:53/udp"]
-						},
-						"swarm": {
-							"image": "swarm",
-							"restart": "always",
-							"command": "[concat('join --addr=', reference(concat(variables('nicName'), copyIndex())).ipConfigurations[0].properties.privateIPAddress, ':2375 consul://', reference(concat(variables('nicName'), copyIndex())).ipConfigurations[0].properties.privateIPAddress, ':8500/swarm')]"
 						}
 					}
 				}
