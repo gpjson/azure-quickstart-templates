@@ -302,7 +302,7 @@
 						"swarm": {
 							"image": "swarm",
 							"restart": "always",
-							"command": "[concat(join --addr=, reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress, ':2375 consul://', reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress, ':8500/swarm')"
+							"command": "[concat('join --addr=', reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress, ':2375 consul://', reference(concat(variables('nicName'), 'master')).ipConfigurations[0].properties.privateIPAddress, ':8500/swarm')]"
 						}
 					}
 				}
@@ -338,7 +338,7 @@
 						"swarm": {
 							"image": "swarm",
 							"restart": "always",
-							"command": "[concat(join --addr=, reference(concat(variables('nicName'), copyIndex())).ipConfigurations[0].properties.privateIPAddress, ':2375 consul://', reference(concat(variables('nicName'), copyIndex())).ipConfigurations[0].properties.privateIPAddress, ':8500/swarm')"
+							"command": "[concat('join --addr=', reference(concat(variables('nicName'), copyIndex())).ipConfigurations[0].properties.privateIPAddress, ':2375 consul://', reference(concat(variables('nicName'), copyIndex())).ipConfigurations[0].properties.privateIPAddress, ':8500/swarm')]"
 						}
 					}
 				}
