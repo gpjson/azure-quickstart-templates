@@ -338,7 +338,7 @@
 	"outputs": {
 		"publicIP": {
 			"type": "Microsoft.Network/publicIPAddresses",
-			"value": "reference(concat(variables('publicIpAddressName'), 'master')).ipAddress"
+			"value": "[reference(concat(variables('publicIpAddressName'), 'master')).ipAddress]"
 		}
 	}
 }
