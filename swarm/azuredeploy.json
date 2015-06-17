@@ -280,6 +280,9 @@
 			"name": "cluster",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2015-01-01",
+			"dependsOn": [
+				"[concat('Microsoft.Storage/storageAccounts/', parameters('newStorageAccountName'))]"
+			],
 			"properties": {
 				"mode": "Incremental",
 				"templateLink": {
