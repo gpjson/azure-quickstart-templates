@@ -1,8 +1,8 @@
 "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "portalvhds5ckn466qg88n1": {
-            "type": "string",
+        "StorageAccountName": {
+            "type": "portalvhds5ckn466qg88n1",
             "metadata": {
                 "Description": "https://portalvhds5ckn466qg88n1.blob.core.windows.net/vhds/girishtestarm-girishtestarm-2015-08-19.vhd"
             }
